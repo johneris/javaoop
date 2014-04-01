@@ -23,5 +23,12 @@ public class TestBook {
             500, 11);
         
         System.out.println(book2);
+        
+        book2.setPrice(100);
+        book2.setQtyInStock(711);
+        
+        System.out.println(book2);
+        System.out.println(book2.getPrice());
+        System.out.println(book2.getQtyInStock());
     }
 }

@@ -46,11 +46,11 @@ public class MyComplex {
     }
     
     public boolean isReal() {
-        return true;
+        return (this.imag == 0);
     }
     
     public boolean isImaginary() {
-        return true;
+        return !isReal();
     }
     
     public boolean equals(double real, double imag) {

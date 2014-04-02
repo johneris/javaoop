@@ -31,15 +31,15 @@ public class Book {
     }
     
     public String getName() {
-        return this.name;
+        return name;
     }
     
     public Author getAuthor()   {
-        return this.author;
+        return author;
     }
     
     public double getPrice()    {
-        return this.price;
+        return price;
     }
     
     public void setPrice(double price)  {
@@ -47,7 +47,7 @@ public class Book {
     }
     
     public int getQtyInStock()  {
-        return this.qtyInStock;
+        return qtyInStock;
     }
     
     public void setQtyInStock(int qtyInStock)   {
@@ -55,20 +55,20 @@ public class Book {
     }
     
     public String getAuthorName()   {
-        return this.author.getName();
+        return author.getName();
     }
     
     public String getAuthorEmail()  {
-        return this.author.getEmail();
+        return author.getEmail();
     }
     
     public char getAuthorGender()   {
-        return this.author.getGender();
+        return author.getGender();
     }
     
     @Override
     public String toString() {
-        return this.name + " by " + this.author;
+        return name + " by " + author;
     }
     
 }

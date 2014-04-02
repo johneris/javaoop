@@ -25,7 +25,7 @@ public class MyPoint {
     }
     
     public int getX()   {
-        return this.x;
+        return x;
     }
     
     public void setX(int x) {
@@ -33,7 +33,7 @@ public class MyPoint {
     }
     
     public int getY()   {
-        return this.y;
+        return y;
     }
     
     public void setY(int y) {

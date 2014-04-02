@@ -22,11 +22,11 @@ public class Author {
     }
     
     public String getName() {
-        return this.name;
+        return name;
     }
     
     public String getEmail()    {
-        return this.email;
+        return email;
     }
     
     public void setEmail(String email)  {
@@ -34,12 +34,12 @@ public class Author {
     }
     
     public char getGender() {
-        return this.gender;
+        return gender;
     }
     
     @Override
     public String toString()    {
-        return this.name + " (" + this.gender + ") at " + this.email;
+        return name + " (" + gender + ") at " + email;
     }
     
 }

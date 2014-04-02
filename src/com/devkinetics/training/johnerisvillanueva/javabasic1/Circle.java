@@ -41,12 +41,12 @@ public class Circle {
         return radius*radius*Math.PI;
     }
     
-    public void setRadius(double r) {
-        radius = r;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
     
-    public void setColor(String c)  {
-        color = c;
+    public void setColor(String color)  {
+        this.color = color;
     }
     
     @Override

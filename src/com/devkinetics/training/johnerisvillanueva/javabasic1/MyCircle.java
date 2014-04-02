@@ -25,7 +25,7 @@ public class MyCircle {
     }
     
     public int getRadius()  {
-        return this.radius;
+        return radius;
     }
     
     public void setRadius(int radius)   {
@@ -33,7 +33,7 @@ public class MyCircle {
     }
     
     public MyPoint getCenter()  {
-        return this.center;
+        return center;
     }
     
     public void setCenter(MyPoint center)   {
@@ -41,11 +41,11 @@ public class MyCircle {
     }
     
     public int getCenterX() {
-        return this.center.getX();
+        return center.getX();
     }
     
     public int getCenterY() {
-        return this.center.getY();
+        return center.getY();
     }
     
     public void setCenterXY(int x, int y)   {
@@ -54,10 +54,10 @@ public class MyCircle {
     
     @Override
     public String toString()    {
-        return "Circle @ " + this.center + " radius=" + this.radius;
+        return "Circle @ " + center + " radius=" + radius;
     }
     
     public double getArea() {
-        return Math.PI * this.radius * this.radius;
+        return Math.PI * radius * radius;
     }
 }

@@ -30,22 +30,22 @@ public class MyTriangle {
     
     @Override
     public String toString()    {
-        return "Triangle @ " + this.v1 + ", " +
-            this.v2 + ", " + this.v3;
+        return "Triangle @ " + v1 + ", " +
+            v2 + ", " + v3;
     }
     
     public double getPerimeter()    {
         double perimeter;
-        perimeter = this.v1.distance(this.v2);
-        perimeter += this.v2.distance(this.v3);
-        perimeter += this.v3.distance(this.v1);
+        perimeter = v1.distance(v2);
+        perimeter += v2.distance(v3);
+        perimeter += v3.distance(v1);
         return perimeter;
     }
     
     public void printType() {
-        double line1 = this.v1.distance(this.v2);
-        double line2 = this.v2.distance(this.v3);
-        double line3 = this.v3.distance(this.v1);
+        double line1 = v1.distance(v2);
+        double line2 = v2.distance(v3);
+        double line3 = v3.distance(v1);
         if(line1 == line2 &&  line2 == line3)   {
             System.out.println("equilateral");
         } else if(line1 != line2 &&  line2 != line3 && line3 != line1)   {

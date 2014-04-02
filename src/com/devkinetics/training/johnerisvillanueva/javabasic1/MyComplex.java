@@ -62,11 +62,11 @@ public class MyComplex {
     }
     
     public double magnitude()   {
-        return 0;
+        return Math.sqrt(real*2 + imag*2);
     }
     
     public double argumentInRadians()   {
-        return 0;
+        return Math.atan2(imag, real);
     }
     
     public int argumentInDegrees()  {
@@ -74,22 +74,30 @@ public class MyComplex {
     }
     
     public MyComplex conjugate()    {
-        return this;
+        return new MyComplex(real, -imag);
     }
     
     public MyComplex add(MyComplex another) {
-        return this;
+        double real = this.real + another.real;
+        double imag = this.imag + another.imag;
+        return new MyComplex(real, imag);
     }
     
     public MyComplex subtract(MyComplex another) {
-        return this;
+        double real = this.real - another.real;
+        double imag = this.imag - another.imag;
+        return new MyComplex(real, imag);
     }
     
     public MyComplex multiplyWith(MyComplex another) {
-        return this;
+        double real = this.real * another.real - this.imag * another.imag;
+        double imag = this.real * another.imag + this.imag * another.real;
+        return new MyComplex(real, imag);
     }
     
     public MyComplex divideBy(MyComplex another) {
-        return this;
+        double scale = real*real + imag*imag;
+        MyComplex reciprocal = new MyComplex(real / scale, -imag / scale);
+        return new MyComplex(reciprocal.real * real, reciprocal.imag * imag);
     }
 }

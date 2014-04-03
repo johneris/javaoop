@@ -62,7 +62,7 @@ public class MyComplex {
     }
     
     public double magnitude()   {
-        return Math.sqrt(real*2 + imag*2);
+        return Math.sqrt(real*real + imag*imag);
     }
     
     public double argumentInRadians()   {

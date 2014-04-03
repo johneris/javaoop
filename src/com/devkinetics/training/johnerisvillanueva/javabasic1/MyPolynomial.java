@@ -36,24 +36,58 @@ public class MyPolynomial {
     }
     
     public int getDegree()  {
-        return 0;
+        return coeffs.length-1;
     }
     
     @Override
     public String toString()    {
-        return "";
+        String poly = "";
+        for(int degree = coeffs.length-1; degree >= 0; degree--)    {
+            if(coeffs[degree] == 0) continue;
+            if(degree != coeffs.length-1)
+                poly += (coeffs[degree] > 0 ? " + " : " - ");
+            poly += Math.floor(coeffs[degree]*100) / 100;
+            if(degree >= 2) poly += "x^" + degree;
+            else if(degree == 1)    poly += "x";
+        }
+        return poly;
     }
     
     public double evaluate(double x)    {
-        return 0;
+        double ans = 0;
+        for(int degree = 0; degree < coeffs.length; degree++)    {
+            ans += Math.pow((coeffs[degree] * x), degree);
+        }
+        return ans;
     }
     
     public MyPolynomial add(MyPolynomial another)   {
-        return this;
+        int size =  coeffs.length > another.getDegree()+1 ? 
+                    coeffs.length : another.getDegree()+1;
+        double[] ans = new double[size];
+        
+        for(int degree = 0; degree < ans.length; degree++)   {
+            double add = 0;
+            if(degree <= this.getDegree())      add += coeffs[degree];
+            if(degree <= another.getDegree())   add += another.coeffs[degree];
+            ans[degree] = add;
+        }
+        
+        return new MyPolynomial(ans);
     }
     
     public MyPolynomial multiply(MyPolynomial another)  {
-        return this;
+        int size = getDegree() + another.getDegree() + 1;
+        double[] ans = new double[size];
+        
+        for(int deg1 = 0; deg1 < coeffs.length; deg1++)    {
+            for(int deg2 = 0; deg2 < another.coeffs.length; deg2++) {
+                double num = coeffs[deg1] * another.coeffs[deg2];
+                ans[deg1+deg2] += num;
+            }
+        }
+        
+        return new MyPolynomial(ans);
     }
     
 }

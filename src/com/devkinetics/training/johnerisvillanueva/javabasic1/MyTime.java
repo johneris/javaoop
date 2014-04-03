@@ -59,33 +59,105 @@ public class MyTime {
     
     @Override
     public String toString()    {
-        return (hour >= 10 ? "" + hour : "0" + hour) 
-                + (minute >= 10 ? "" + minute : "0" + minute) 
+        return (hour >= 10 ? "" + hour : "0" + hour) + ":"
+                + (minute >= 10 ? "" + minute : "0" + minute) + ":"
                 + (second >= 10 ? "" + second : "0" + second);
     }
     
     public MyTime nextSecond()  {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        s++;
+        if(s == 60) {
+            s = 0;
+            m++;
+        }
+        if(m == 60) {
+            m = 0;
+            h++;
+        }
+        if(h == 24) {
+            h = 0;
+        }
+        return new MyTime(h, m, s);
     }
     
     public MyTime nextMinute()  {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        m++;
+        if(m == 60) {
+            m = 0;
+            h++;
+        }
+        if(h == 24) {
+            h = 0;
+        }
+        return new MyTime(h, m, s);
     }
     
     public MyTime nextHour()    {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        h++;
+        if(h == 24) {
+            h = 0;
+        }
+        return new MyTime(h, m, s);
     }
     
     public MyTime previousSecond()  {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        s--;
+        if(s == -1) {
+            s = 59;
+            m--;
+        }
+        if(m == -1) {
+            m = 59;
+            h--;
+        }
+        if(h == -1) {
+            h = 23;
+        }
+        return new MyTime(h, m, s);
     }
     
     public MyTime previousMinute()  {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        m--;
+        if(m == -1) {
+            m = 59;
+            h--;
+        }
+        if(h == -1) {
+            h = 23;
+        }
+        return new MyTime(h, m, s);
     }
     
     public MyTime previousHour()    {
-        return this;
+        int h = 0, m = 0, s = 0;
+        h = this.hour;
+        m = this.minute;
+        s = this.second;
+        h--;
+        if(h == -1) {
+            h = 23;
+        }
+        return new MyTime(h, m, s);
     }
     
 }

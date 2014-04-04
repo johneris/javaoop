@@ -10,9 +10,9 @@ package com.devkinetics.training.johnerisvillanueva.javabasic1;
  *
  * @author John Eris
  */
-public class Shape {
-    private String color;
-    private boolean filled;
+public abstract class Shape {
+    protected String color;
+    protected boolean filled;
     
     public Shape()  {
         color = "red";
@@ -46,4 +46,7 @@ public class Shape {
                 + " and " + (filled ? "" : "not")
                 + " filled";
     }
+    
+    abstract double getArea();
+    abstract double getPerimeter();
 }

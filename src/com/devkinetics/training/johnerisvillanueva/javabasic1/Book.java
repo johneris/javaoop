@@ -6,26 +6,29 @@
 
 package com.devkinetics.training.johnerisvillanueva.javabasic1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author John Eris
  */
 public class Book {
     private String name;
-    private Author author;
+    private List<Author> authors;
     private double price;
     private int qtyInStock;
     
-    public Book(String name, Author author, double price)   {
+    public Book(String name, double price)   {
         this.name = name;
-        this.author = author;
+        this.authors = new ArrayList<Author>();
         this.price = price;
         this.qtyInStock = 0;
     }
     
-    public Book(String name, Author author, double price, int qtyInStock)   {
+    public Book(String name, double price, int qtyInStock)   {
         this.name = name;
-        this.author = author;
+        this.authors = new ArrayList<Author>();
         this.price = price;
         this.qtyInStock = qtyInStock;
     }
@@ -34,8 +37,8 @@ public class Book {
         return name;
     }
     
-    public Author getAuthor()   {
-        return author;
+    public List<Author> getAuthors()   {
+        return authors;
     }
     
     public double getPrice()    {
@@ -54,21 +57,19 @@ public class Book {
         this.qtyInStock = qtyInStock;
     }
     
-    public String getAuthorName()   {
-        return author.getName();
-    }
-    
-    public String getAuthorEmail()  {
-        return author.getEmail();
-    }
-    
-    public char getAuthorGender()   {
-        return author.getGender();
-    }
-    
     @Override
     public String toString() {
-        return name + " by " + author;
+        return name + " by " + authors.size() + " authors";
+    }
+    
+    public void printAuthors()  {
+        for(Author a : authors) {
+            System.out.println(a);
+        }
+    }
+    
+    public void addAuthor(Author author)    {
+        authors.add(author);
     }
     
 }

@@ -50,7 +50,7 @@ public class MyComplex {
     }
     
     public boolean isImaginary() {
-        return !isReal();
+        return false;
     }
     
     public boolean equals(double real, double imag) {
@@ -70,7 +70,7 @@ public class MyComplex {
     }
     
     public int argumentInDegrees()  {
-        return 0;
+        return (int)Math.atan2(imag, real);
     }
     
     public MyComplex conjugate()    {

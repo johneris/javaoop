@@ -10,48 +10,44 @@ package com.devkinetics.training.johnerisvillanueva.javabasic1;
  *
  * @author John Eris
  */
-public class Circle {
+public class Circle extends Shape {
     private double radius;
-    private String color;
     
     public Circle() {
+        super();
         this.radius = 1.0;
-        this.color = "red";
     }
     
     public Circle(double radius) {
+        super();
         this.radius = radius;
-        this.color = "red";
     }
     
-    public Circle(double radius, String color)   {
+    public Circle(double radius, String color, boolean filled)   {
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
     }
     
     public double getRadius()   {
         return radius;
     }
     
-    public String getColor()    {
-        return color;
-    }
-    
-    public double getArea() {
-        return radius*radius*Math.PI;
-    }
-    
     public void setRadius(double radius) {
         this.radius = radius;
     }
     
-    public void setColor(String color)  {
-        this.color = color;
+    public double getArea() {
+        return radius * radius * Math.PI;
+    }
+    
+    public double getPerimeter()    {
+        return 2 * Math.PI * radius;
     }
     
     @Override
     public String toString()    {
-        return "Circle: radius=" + radius + " color=" + color;
+        return "A Circle with radius=" + radius
+                + ", which is a subclass of " + super.toString();
     }
     
 }
